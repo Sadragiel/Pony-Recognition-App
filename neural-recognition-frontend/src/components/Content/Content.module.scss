@@ -1,0 +1,23 @@
+@import '../../styles/layout.scss';
+@import '../../styles/font.scss';
+@import '../../styles/colors.scss';
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper {
+    width: 80%;
+  }
+
+  .form {
+    margin-bottom: 30px;
+  }
+
+  .results {
+    margin-bottom: 30px;
+  }
+}

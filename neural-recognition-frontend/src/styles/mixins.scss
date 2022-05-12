@@ -1,0 +1,13 @@
+@mixin button($bg-color, $color: black) {
+  background-color: $bg-color; 
+  border: none;
+  color: $color;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 15px;
+}

@@ -1,0 +1,41 @@
+@import '../../../styles/colors.scss';
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  font-size: 36px;
+  line-height: 1.2;
+
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .item {
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    .link {
+      color: $text-color-secondary;
+
+      &:hover {
+        color: $background-color-main;
+      }
+
+      &.active {
+        color: $brand-color;
+
+        &:hover {
+          color: $brand-color;
+        }
+      }
+    }
+  }
+
+}

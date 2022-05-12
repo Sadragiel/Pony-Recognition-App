@@ -1,0 +1,16 @@
+@import '../../../styles/layout.scss';
+@import '../../../styles/font.scss';
+@import '../../../styles/colors.scss';
+
+.languageSwitcher {
+  font-size: 24px;
+  line-height: 1.2;
+
+  .icon {
+    max-height: $header-height / 1.5;
+  }
+  
+  .dialog {
+    width: 350px;
+  }
+}

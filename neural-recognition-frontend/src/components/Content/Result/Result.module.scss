@@ -1,0 +1,39 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 36px;
+  line-height: 1.2;
+
+  .title {
+    font-size: 42px;
+    font-weight: bold;
+  }
+
+  .table {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+  }
+
+  .row {
+    display: flex;
+    width: 100%;
+
+    &:first-child {
+      border-bottom: 2px solid black;
+      font-weight: bold;
+    }
+  }
+
+  .cell {
+    padding: 5px 15px;
+    flex: 50% 0 0;
+
+    &:not(:last-child) {
+      border-right: 2px solid black;
+    }
+  }
+}

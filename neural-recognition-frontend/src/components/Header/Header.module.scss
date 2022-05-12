@@ -1,0 +1,31 @@
+@import '../../styles/layout.scss';
+@import '../../styles/colors.scss';
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-height: $header-height;
+  padding: 0 50px;
+
+  color: $text-color-secondary;
+
+  .column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    
+  }
+
+  .navigation {
+
+  }
+
+  .languageSwitcher {
+
+  }
+}
