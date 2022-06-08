@@ -1,0 +1,20 @@
+@import '../../styles/layout.scss';
+@import '../../styles/colors.scss';
+
+.mainPage {
+  
+  .header {
+    background-color: $background-color-secondary;
+    height: $header-height;
+  }
+
+  .content {
+    min-height: calc(100vh - $header-height * 2);
+    background-color: $background-color-main;
+  }
+
+  .footer {
+    background-color: $background-color-secondary;
+    height: $header-height;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../styles/layout.scss';
+@import '../../styles/colors.scss';
+@import '../../styles/font.scss';
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: $header-height;
+  padding: 0 50px;
+
+  color: $text-color-secondary;
+
+  .label {
+    font-family: $pony-font-family;
+    font-size: 36px;
+    line-height: 1.2;
+    color: $brand-color;
+  }
+
+  .image {
+    width: $header-height;
+    height: $header-height;
+    object-fit: cover;
+  }
+}

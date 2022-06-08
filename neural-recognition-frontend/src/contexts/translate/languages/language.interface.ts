@@ -19,6 +19,9 @@ export interface Language {
       historyPage: string,
     },
   },
+  footer: {
+    label: string,
+  },
   content: {
     form: {
       title: string,
@@ -30,5 +33,9 @@ export interface Language {
       name: string,
       prediction: string,
     },
+  },
+  resultsContent: {
+    withProbability: string,
+    noResults: string,
   },
 };

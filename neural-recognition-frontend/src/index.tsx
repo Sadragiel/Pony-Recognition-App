@@ -1,22 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { TranslationContextProvider } from './contexts/translate';
 import { MainPage } from './containers/MainPage';
 import { theme } from './services/material';
 import { ThemeProvider } from '@emotion/react';
+import { ResultsPage } from './containers/ResultsPage';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <TranslationContextProvider>
-        <MainPage />
-      </TranslationContextProvider>
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <TranslationContextProvider>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="results" element={<ResultsPage />} />
+          </Routes>
+        </TranslationContextProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

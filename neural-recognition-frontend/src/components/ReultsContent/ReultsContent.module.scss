@@ -1,0 +1,61 @@
+@import '../../styles/layout.scss';
+@import '../../styles/font.scss';
+@import '../../styles/colors.scss';
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  line-height: 1.2;
+
+  .wrapper {
+    width: 80%;
+    padding: 20px 0;
+  }
+
+  .resultList {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .resultItem {
+    flex: 0 0 23%;
+    padding: 5px 10px;
+  }
+
+  .resultImageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .resultImage {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .resultItemName {
+    text-align: center;
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .resultItemPrediction {
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .noItemsLabel {
+    text-align: center;
+  }
+}

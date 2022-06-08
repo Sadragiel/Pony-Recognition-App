@@ -1,9 +1,10 @@
 import { Content } from '../../components/Content';
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
-import css from './MainPage.module.scss';
+import { ReultsContent } from '../../components/ReultsContent';
+import css from './ResultsPage.module.scss';
 
-export const MainPage = () => {
+export const ResultsPage = () => {
   return (
     <div className={css.mainPage}>
       <div className={css.header}>
@@ -11,7 +12,7 @@ export const MainPage = () => {
       </div>
 
       <div className={css.content}>
-        <Content />
+        <ReultsContent />
       </div>
 
       <div className={css.footer}>

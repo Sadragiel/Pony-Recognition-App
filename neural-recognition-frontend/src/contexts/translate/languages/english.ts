@@ -21,6 +21,9 @@ export const english: Language = {
       historyPage: 'History',
     },
   },
+  footer: {
+    label: 'Powered by Princess Celestia',
+  },
   content: {
     form: {
       title: 'Upload picture of Pony witch you want to know',
@@ -32,5 +35,9 @@ export const english: Language = {
       name: `Name`,
       prediction: 'Prediction',
     },
+  },
+  resultsContent: {
+    withProbability: 'With a probability of',
+    noResults: 'No results for now',
   },
 };

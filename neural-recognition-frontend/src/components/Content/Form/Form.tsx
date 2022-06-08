@@ -3,7 +3,7 @@ import { useTranslationApi } from "../../../contexts/translate";
 import css from './Form.module.scss';
 
 export const Form = ({ requestRecognition }: {
-  requestRecognition: (image: File) => void,
+  requestRecognition: (image: File, imageUrl: string) => void,
 }) => {
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [imageUrl, setImageUrl] = useState('');
@@ -28,8 +28,8 @@ export const Form = ({ requestRecognition }: {
       return;
     }
 
-    requestRecognition(imageFile);
-  }, [imageFile])
+    requestRecognition(imageFile, imageUrl);
+  }, [imageFile, imageUrl])
 
   return (
     <div className={css.formWrapper}>

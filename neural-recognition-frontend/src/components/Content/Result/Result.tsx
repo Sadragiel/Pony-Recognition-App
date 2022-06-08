@@ -1,27 +1,11 @@
 import { ChangeEvent, FormEvent, useCallback, useState } from "react";
 import { useTranslationApi } from "../../../contexts/translate";
+import { AnalyzedEntity } from "../../../services/analyze.service";
 import css from './Result.module.scss';
 
-const mockResults = [
-  {
-    name: 'Rarity',
-    prediction: 80,
-  },
-  {
-    name: 'Rainbow Dash',
-    prediction: 12.5,
-  },
-  {
-    name: 'Twilight',
-    prediction: 3.8,
-  },
-  {
-    name: 'Fluttershy',
-    prediction: 1.2,
-  },
-]
-
-export const Result = () => {
+export const Result = ({ results }: {
+  results: AnalyzedEntity[],
+}) => {
   const { language } = useTranslationApi();
 
   return (
@@ -39,10 +23,10 @@ export const Result = () => {
           </div>  
         </div>
 
-        {mockResults.map(item => (
+        {results.map(item => (
           <div className={css.row}>
             <div className={css.cell}>
-              { item.name }
+              { item.ponyName }
             </div>
             <div className={css.cell}>
               { item.prediction }

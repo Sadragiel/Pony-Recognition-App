@@ -21,6 +21,9 @@ export const ukrainian: Language = {
       historyPage: 'Історія',
     },
   },
+  footer: {
+    label: 'Підтримується Принцесою Селестією',
+  },
   content: {
     form: {
       title: 'Завантажте картинку Поні, яку хочете знати краще',
@@ -32,5 +35,9 @@ export const ukrainian: Language = {
       name: `Ім'я`,
       prediction: 'Вирогідність',
     },
+  },
+  resultsContent: {
+    withProbability: 'З вирогідністю',
+    noResults: 'Поки немає збережених результатів',
   },
 };

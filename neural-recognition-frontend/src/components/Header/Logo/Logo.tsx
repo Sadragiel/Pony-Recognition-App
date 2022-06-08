@@ -3,6 +3,7 @@ import { LogoUrls } from "./LogoUrlsEnum";
 import { useTranslationApi } from "../../../contexts/translate";
 
 import css from './Logo.module.scss';
+import { Link } from "react-router-dom";
 
 export const Logo = () => {
   const [logoUrl, setLogoUrl] = useState(LogoUrls.Default);
@@ -10,7 +11,7 @@ export const Logo = () => {
 
   useEffect(() => {
     // Easter Egg: with 3% chance the logotype will be replaced with Discord one
-    const isDiscord = Math.floor(Math.random() * 100) < 3;
+    const isDiscord = Math.floor(Math.random() * 100) < 4;
     
     if (isDiscord) {
       setLogoUrl(LogoUrls.Discord);
@@ -19,8 +20,8 @@ export const Logo = () => {
 
   return (
     <div className={css.logo}>
-      <a 
-        href="/"
+      <Link
+        to="/"
         className={css.link}
       >
         <span className={css.title}>
@@ -32,7 +33,7 @@ export const Logo = () => {
           alt="MLP Logo"
           title="Logotype"
         />
-      </a>
+      </Link>
     </div>
   )
 }
