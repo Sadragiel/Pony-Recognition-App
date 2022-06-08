@@ -11,12 +11,25 @@ const mockResult = [
 
 // Order should be discussed with BE
 const predictionClasses = [
-  'Ratity',
-  'Twilight Sparkle',
-  'Rainbow Dash',
-  'Fluttershy',
-  'Pinkie Pie',
-  'Apple Jack',
+  'twilight sparkle',
+  'pinkie pie',
+  'coloratura',
+  'apple bloom',
+  'roseluck',
+  'rainbow dash',
+  'spitfire',
+  'sweetie belle',
+  'pear butter',
+  'lyra heartstrings',
+  'tempest shadow',
+  'rarity',
+  'coco pommel',
+  'princess luna',
+  'sunset shimmer',
+  'applejack',
+  'fluttershy',
+  'derpy hooves',
+  'scootaloo',
 ] as const;
 
 export type AnalyzedEntity = {
