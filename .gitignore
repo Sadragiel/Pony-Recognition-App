@@ -1,0 +1,7 @@
+/.ipynb_checkpoints
+/training-data
+/envs
+/animal-recognition-checkpoint
+/serve
+animal-recognition.h5
+/__pycache__

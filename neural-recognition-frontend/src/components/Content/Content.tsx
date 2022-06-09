@@ -8,9 +8,12 @@ import { Result } from './Result';
 
 export const Content = () => {
   const [results, setResults] = useState<AnalyzedEntity[]>([]);
+
   const requestRecognition = useCallback(async (imageFile: File, imageUrl: string) => {
+    setResults([]);
+
     const analizationResults = await analyze(imageFile);
-    
+
     if (analizationResults[0]) {
       saveAnalizeResult(analizationResults[0], imageUrl);
     }

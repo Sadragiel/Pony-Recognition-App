@@ -1,12 +1,13 @@
-import { ChangeEvent, FormEvent, useCallback, useState } from "react";
 import { useTranslationApi } from "../../../contexts/translate";
 import { AnalyzedEntity } from "../../../services/analyze.service";
 import css from './Result.module.scss';
 
-export const Result = ({ results }: {
+export const Result = ({ results: inputResults }: {
   results: AnalyzedEntity[],
 }) => {
   const { language } = useTranslationApi();
+
+  let results = inputResults.filter(result => result.prediction > 0.1);
 
   return (
     <div className={css.results}>
@@ -20,7 +21,7 @@ export const Result = ({ results }: {
           </div>
           <div className={css.cell}>
             { language.content.results.prediction }
-          </div>  
+          </div>
         </div>
 
         {results.map(item => (
@@ -29,8 +30,8 @@ export const Result = ({ results }: {
               { item.ponyName }
             </div>
             <div className={css.cell}>
-              { item.prediction }
-            </div>  
+              { item.prediction.toFixed(2) }
+            </div>
         </div>
         ))}
       </div>

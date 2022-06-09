@@ -9,11 +9,11 @@ export type SavedResultData = AnalyzedEntity & {
 export function saveAnalizeResult(analyzedEntity: AnalyzedEntity, imageUrl: string) {
   const stredDataString = localStorage.getItem(KEY) ?? '[]';
   const dataToSave = [
-    ...JSON.parse(stredDataString),
     {
       ...analyzedEntity,
       imageUrl,
     },
+    ...JSON.parse(stredDataString),
   ];
 
   localStorage.setItem(KEY, JSON.stringify(dataToSave));

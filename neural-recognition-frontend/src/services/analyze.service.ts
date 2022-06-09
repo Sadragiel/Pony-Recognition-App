@@ -43,9 +43,9 @@ export async function analyze(file: File): Promise<AnalyzedEntity[]> {
   let analizeResult: number[];
 
   try {
-    const res = await fetch(`http://localhost:3000/imageclassifier/predict`, { method: 'POST', body: formData })
+    const res = await fetch(`http://localhost:5000/imageclassifier/predict`, { method: 'POST', body: formData })
     const data: any[] = await res.json();
-    
+
     analizeResult = data[0]; // should be modified once BE will be ready and covvered with types
   } catch {
     analizeResult = mockResult;
@@ -55,7 +55,7 @@ export async function analyze(file: File): Promise<AnalyzedEntity[]> {
     const ponyName = predictionClasses[index];
     return {
       ponyName,
-      prediction,
+      prediction: prediction * 100,
     };
   }).sort((a, b) => b.prediction - a.prediction);
 }

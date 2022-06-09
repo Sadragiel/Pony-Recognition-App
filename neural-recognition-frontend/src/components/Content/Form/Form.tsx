@@ -14,16 +14,19 @@ export const Form = ({ requestRecognition }: {
     if (!image) {
       return;
     }
+    const reader = new FileReader();
 
-    const url = URL.createObjectURL(image);
+    reader.addEventListener("load", () => {
+      setImageFile(image);
+      setImageUrl(reader.result as string);
+    }, false);
 
-    setImageFile(image);
-    setImageUrl(url);
+    reader.readAsDataURL(image);
   }, []);
 
   const onSubmit = useCallback((event: FormEvent) => {
     event.preventDefault();
-    
+
     if (!imageFile) {
       return;
     }
@@ -36,22 +39,22 @@ export const Form = ({ requestRecognition }: {
       <h3 className={css.title}>
         { language.content.form.title }
       </h3>
-      <form 
+      <form
         className={css.form}
         onSubmit={onSubmit}
       >
-        <input 
-          accept="image/*" 
-          type="file" 
+        <input
+          accept="image/*"
+          type="file"
           id="select-image"
           style={{ display: 'none' }}
           onChange={onImageUpload}
         />
-        <label 
+        <label
           className={css.label}
           htmlFor="select-image"
         >
-          <span 
+          <span
             className={css.upload}
           >
             { language.content.form.label }
@@ -71,7 +74,7 @@ export const Form = ({ requestRecognition }: {
             { language.content.form.uploadedImageTitle }
           </h4>
           <div className={css.uploadedImageWrapper}>
-            <img 
+            <img
               className={css.uploadedImage}
               src={imageUrl}
               alt="Uploaded Image Preview"
